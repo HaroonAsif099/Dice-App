@@ -1,0 +1,93 @@
+import 'package:flutter/material.dart';
+import 'dart:math';
+
+void main() {
+runApp(MyDiceApp());
+}
+
+class MyDiceApp extends StatelessWidget {
+@override
+Widget build(BuildContext context) {
+return MaterialApp(
+home: Scaffold(
+backgroundColor: Colors.amberAccent,
+appBar: AppBar(),
+body: ClickAblbeDiceApp(),
+),
+);
+}
+}
+
+class ClickAblbeDiceApp extends StatefulWidget {
+@override
+_ClickAblbeDiceAppState createState() => _ClickAblbeDiceAppState();
+}
+
+class _ClickAblbeDiceAppState extends State<ClickAblbeDiceApp> {
+int num = 5;
+int num2 = 1;
+int num3 = 2;
+int num4 = 3;
+int sum = 0;
+@override
+Widget build(BuildContext context) {
+return Center(
+child: Row(
+children: [
+Expanded(
+child: TextButton(
+child: Image.asset("images/dice$num.png"),
+onPressed: () {
+setState(() {
+num = Random().nextInt(6) + 1;
+});
+print(num);
+},
+)),
+Expanded(
+child: TextButton(
+child: Image.asset("images/dice$num2.png"),
+onPressed: () {
+setState(() {
+num2 = Random().nextInt(6) + 1;
+});
+print(num2);
+},
+)),
+  Expanded(
+      child: TextButton(
+        child: Image.asset("images/dice$num3.png"),
+        onPressed: () {
+          setState(() {
+            num3 = Random().nextInt(6) + 1;
+          });
+          print(num3);
+        },
+      )),
+  Expanded(
+      child: TextButton(
+        child: Image.asset("images/dice$num4.png"),
+        onPressed: () {
+          setState(() {
+            num4 = Random().nextInt(6) + 1;
+          });
+          print(num4);
+          var sum = num+num2+num3+num4;
+          print(sum);
+
+
+        },
+      )),
+
+
+],
+),
+);
+
+}
+}
+
+
+/*
+
+ */
